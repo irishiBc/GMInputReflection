@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Linq;
 
-namespace MoleMole.CaseTest
+namespace GameMangerField
 {
         [GM("自定义")]
         public static void MyGM()
