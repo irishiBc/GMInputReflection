@@ -84,48 +84,7 @@ namespace GameManagerField
             return GMInfos;
         }
 
-        /*   一开始的想法是避免编写每一条指令时都要自行SendRequest，只要设置Value即可
-         *   但现实情况是GMTools中单条指令想要发送多次GMRPC指令时，放到GMUtils里去处理反而让一切变得繁琐，不如直接放在GMTools中执行
-         *   
-        /// <summary>
-        /// 发送GM协议，特性默认发送CRpcGMCommand，特性false时不执行
-        /// </summary>
-        static void SendRequest(MethodInfo m)
-        {
-            try
-            {
-                foreach (Attribute a in m.GetCustomAttributes())
-                {
-                    GMAttribute ga = (GMAttribute)a;
-                    if (null != ga)
-                    {
-                        if (ga.NeedRequest)
-                            AppInterface.SendRequest<CRpcGMCommand.CRet>(request, (err, ret) =>
-                            {
-                                if (ret.ErrorCode == EErrorCode.Success)
-                                {
-                                    SuperDebug.Log("AppInterface.SendRequest , Result : Success");
-                                }
-                                else
-                                {
-                                    SuperDebug.LogInfo("AppInterface.SendRequest , Result : Failed");
-                                }
-                            });
-                        else
-                        {
-                            SuperDebug.Log("No Using AppInterface.SendRequest In GMUtils");
-                        }
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                throw e;
-            }
-
-        }
-        */
-
+       
         /// <summary>
         /// 获取所有可执行的GM指令函数和函数名
         /// </summary>
